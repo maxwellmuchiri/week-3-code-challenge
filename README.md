@@ -1,8 +1,7 @@
 # week-3-code-challenge
 
 # Description
-This is a code challenge to  allow create a solution allows user to purchase movie tickets from the
-theater.
+This is a code challenge to  allow create a solution allows users to purchase movie tickets from the theater.
 
 # Getting Started
 In order for you to use the content on this repo ensure you have the following:
@@ -30,6 +29,16 @@ To use this repo on your machine requires some simple steps
         code .
 
 - (Alternate Option) Open it in any editor of your choice.
+
+
+# Runing Json Server
+Install json server through the terminal
+  -npm install -g json-server
+Create a db.json file with the relevant data (Flatdago)
+  -To start the server run :
+      json-server --watch db.json
+  -To ensure you have the json server installed run
+   
 
 
 
