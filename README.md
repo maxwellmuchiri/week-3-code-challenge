@@ -4,7 +4,6 @@
 This is a code challenge to  allow create a solution allows user to purchase movie tickets from the
 theater.
 
-
 # Getting Started
 In order for you to use the content on this repo ensure you have the following:
 
