@@ -67,6 +67,6 @@ Refresh the page and your website is hosted ready to share
 # Authors
 This project was contributed to by:
 - [Maxwell Muchiri](https://github.com/maxwellmuchiri/)
-
+-  [Titus Kalunge](https://github.com/Kalunge)
 # License
 The project is licensed under Apache 2.0.
