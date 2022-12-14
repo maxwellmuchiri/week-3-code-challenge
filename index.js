@@ -1,50 +1,61 @@
+//fetching data 
+const baseUrl = "http://localhost:3000/films";
+function fetchFilms(){
+    fetch(baseUrl)
+        .then((response) => response.json())
+        .then((data) =>{
+            data.forEach((films) =>{
+
+                
+                let li = document.createElement("li");
+                  li.textContent = films.title;
+                  li.addEventListener("click",
+                (e)=>{
+                let buttonContent =document.querySelector("button#buy-ticket")
+                  buttonContent.textContent = "Buy Tickets"
+                let title = document.getElementById("film-title");
+                    title.textContent =
+                films.title;
+                let img =document.getElementById("movie-poster");
+                   img.src = films.poster;
+                let showTime =document.getElementById("showtime");
+                  showTime.textContent =films.showtime;
+                let runTime =document.getElementById("runtime");
+                  runTime.textContent =`${films.runtime} Minutes`;
+                let tickets =document.querySelector("div#ticket-counter");
+                    tickets.textContent = films["capacity"] - films["tickets_sold"]
+                })
+                document.querySelector("ul#films").appendChild(li)
+            })
+        })
+    }fetchFilms()
 
 
-
-
-
-
-//Declaring variables
-
- const title=document.querySelector(".title");
- const burrons=document.querySelector(".burrons")
-//  .addEventListener("click",(x)=>{
-//     console.log(x.target)
-//  });
- const poster=documment.querySelector(".poster");
- const runtime=docuuument.querySelector(".runtime");
- const tickets=document.querySelector(".ticketsAv");
-
- 
-
-//Fetching films using the URL
-//  //Declaring Variables
-
-
- 
-const films = 'http://localhost:3000/films'
-
-// fetching info from
-const url = 'http://localhost:3000/films'
-function getFilms(){
-   fetch(url)
-   .then(res => res.json())
-   .then(data => {
-    data.stringify
-//    data.forEach (film => {
-//        display(film)
-//    })
+function baseFilm(){ fetch(baseUrl)
+    .then(response => response.json())
+    .then(data => {
+    document.querySelector("h3#film-title").textContent = data[0]["title"]
+    document.querySelector("img#movie-poster").setAttribute("src",`${data[0]["poster"]}`)
+    document.querySelector("div#showtime").textContent = data[0]["showtime"]
+    document.querySelector("div#runtime").textContent = `${data[0]["runtime"]} Minutes`
+    document.querySelector("ul#films").firstElementChild.remove()
+    document.querySelector("div#ticket-counter").textContent = data[0]["capacity"] - data[0]["tickets_sold"]
 })
 }
+baseFilm()
+
+function buyTickets(){
+    let button = document.querySelector("button#buy-ticket")
+    button.addEventListener("click",function(){
+    let currentLi = document.querySelector("div#ticket-counter")
+    let number = parseInt(currentLi.textContent)
+    if(number >=1){
+        currentLi.textContent = currentLi.textContent -1}
+        else {document.querySelector("button#buy-ticket").textContent = "Sold Out"
+       }
+      }
+      )
+      }
+      buyTickets()
 
 
-
-// getFilms()
-// function display(films){
-//    console.log (films.name);
-//    const name =document.createElemnt ('p');
-//    name.innerHTML = films.name
-//    const main = getElementById("main")
-//    main.append(buyticket)
-//    name.addEventListener ("click", () => )
-// }
