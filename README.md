@@ -34,11 +34,12 @@ To use this repo on your machine requires some simple steps
 # Runing Json Server
 Install json server through the terminal
   -npm install -g json-server
-Create a db.json file with the relevant data (Flatdago)
+Create a db.json file with the relevant data (Flatdango)
   -To start the server run :
       json-server --watch db.json
   -To ensure you have the json server installed run
    
+ http://localhost:3000/films
 
 
 
@@ -52,6 +53,16 @@ Use the following steps to run the app.
 - Run the application
 
       npm start
+
+# Hosting on Github
+Upload the files on github
+Go to the settings tab in Github.
+Scroll down and find the Github Pages option in settings. 
+Select a main branch or any other branch that you would like to publish and host online
+click save and wait for about five minutes
+Refresh the page and your website is hosted ready to share
+
+
 
 # Authors
 This project was contributed to by:
