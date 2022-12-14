@@ -1,37 +1,41 @@
-//fetching data 
 const baseUrl = "http://localhost:3000/films";
-function fetchFilms(){
+function fetchMovies(){
     fetch(baseUrl)
         .then((response) => response.json())
         .then((data) =>{
             data.forEach((films) =>{
-
-                
                 let li = document.createElement("li");
-                  li.textContent = films.title;
-                  li.addEventListener("click",
+                li.textContent = films.title;
+                li.addEventListener("click",
                 (e)=>{
-                let buttonContent =document.querySelector("button#buy-ticket")
+                  let buttonContent =
+                  document.querySelector("button#buy-ticket")
                   buttonContent.textContent = "Buy Tickets"
-                let title = document.getElementById("film-title");
+                    let title =
+                 document.getElementById("film-title");
                     title.textContent =
                 films.title;
-                let img =document.getElementById("movie-poster");
-                   img.src = films.poster;
-                let showTime =document.getElementById("showtime");
-                  showTime.textContent =films.showtime;
-                let runTime =document.getElementById("runtime");
-                  runTime.textContent =`${films.runtime} Minutes`;
-                let tickets =document.querySelector("div#ticket-counter");
+                let img =
+                document.getElementById("movie-poster");
+                   img.src =
+                films.poster;
+                   let showTime =
+                document.getElementById("showtime");
+                  showTime.textContent =
+                films.showtime;
+                let runTime =
+                document.getElementById("runtime");
+                  runTime.textContent =
+                `${films.runtime} Minutes`;
+                let tickets =
+              document.querySelector("div#ticket-counter");
                     tickets.textContent = films["capacity"] - films["tickets_sold"]
                 })
                 document.querySelector("ul#films").appendChild(li)
             })
         })
-    }fetchFilms()
-
-
-function baseFilm(){ fetch(baseUrl)
+    }fetchMovies()
+function baseMovie(){ fetch(baseUrl)
     .then(response => response.json())
     .then(data => {
     document.querySelector("h3#film-title").textContent = data[0]["title"]
@@ -42,9 +46,8 @@ function baseFilm(){ fetch(baseUrl)
     document.querySelector("div#ticket-counter").textContent = data[0]["capacity"] - data[0]["tickets_sold"]
 })
 }
-baseFilm()
-
-function buyTickets(){
+baseMovie()
+function buyTicket(){
     let button = document.querySelector("button#buy-ticket")
     button.addEventListener("click",function(){
     let currentLi = document.querySelector("div#ticket-counter")
@@ -56,6 +59,4 @@ function buyTickets(){
       }
       )
       }
-      buyTickets()
-
-
+      buyTicket()
