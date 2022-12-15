@@ -1,5 +1,6 @@
+// Fetching films
 const baseUrl = "http://localhost:3000/films";
-function fetchMovies(){
+function fetchFilms(){
     fetch(baseUrl)
         .then((response) => response.json())
         .then((data) =>{
@@ -25,10 +26,10 @@ function fetchMovies(){
                 document.querySelector("ul#films").appendChild(li)
             })
         })
-    }fetchMovies()
+    }fetchFilms()
 
   
-function baseMovie(){ fetch(baseUrl)
+function baseFilms(){ fetch(baseUrl)
     .then(response => response.json())
     .then(data => {
     document.querySelector("h3#film-title").textContent = data[0]["title"]
@@ -39,7 +40,7 @@ function baseMovie(){ fetch(baseUrl)
     document.querySelector("div#ticket-counter").textContent = data[0]["capacity"] - data[0]["tickets_sold"]
 })
 }
-baseMovie()
+baseFilms()
 
 
 function buyTicket(){
