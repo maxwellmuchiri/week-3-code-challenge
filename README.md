@@ -61,6 +61,7 @@ Scroll down and find the Github Pages option in settings.
 Select a main branch or any other branch that you would like to publish and host online
 click save and wait for about five minutes
 Refresh the page and your website is hosted ready to share
+ https://maxwellmuchiri.github.io/week-3-code-challenge/
 
 
 
