@@ -2,6 +2,9 @@
 body {
     background-color: rgb(255, 255, 255);
     
-    text-align: left;
-    
+    text-align: left;  
 }
+button{
+    color: hwb(0 100% 0%); 
+    background-color: black;  
+   }
