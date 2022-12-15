@@ -8,33 +8,26 @@ function fetchMovies(){
                 li.textContent = films.title;
                 li.addEventListener("click",
                 (e)=>{
-                  let buttonContent =
-                  document.querySelector("button#buy-ticket")
+                let buttonContent = document.querySelector("button#buy-ticket")
                   buttonContent.textContent = "Buy Tickets"
-                    let title =
-                 document.getElementById("film-title");
+                let title = document.getElementById("film-title");
                     title.textContent =
                 films.title;
-                let img =
-                document.getElementById("movie-poster");
-                   img.src =
-                films.poster;
-                   let showTime =
-                document.getElementById("showtime");
-                  showTime.textContent =
-                films.showtime;
-                let runTime =
-                document.getElementById("runtime");
-                  runTime.textContent =
-                `${films.runtime} Minutes`;
-                let tickets =
-              document.querySelector("div#ticket-counter");
+                let img = document.getElementById("movie-poster");
+                   img.src = films.poster;
+                   let showTime = document.getElementById("showtime");
+                  showTime.textContent = films.showtime;
+                let runTime = document.getElementById("runtime");
+                  runTime.textContent = `${films.runtime} Minutes`;
+                let tickets = document.querySelector("div#ticket-counter");
                     tickets.textContent = films["capacity"] - films["tickets_sold"]
                 })
                 document.querySelector("ul#films").appendChild(li)
             })
         })
     }fetchMovies()
+
+  
 function baseMovie(){ fetch(baseUrl)
     .then(response => response.json())
     .then(data => {
@@ -47,6 +40,8 @@ function baseMovie(){ fetch(baseUrl)
 })
 }
 baseMovie()
+
+
 function buyTicket(){
     let button = document.querySelector("button#buy-ticket")
     button.addEventListener("click",function(){
