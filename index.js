@@ -28,7 +28,7 @@ function fetchFilms(){
         })
     }fetchFilms()
 
-  
+  //Adding queryselectors for films
 function baseFilms(){ fetch(baseUrl)
     .then(response => response.json())
     .then(data => {
@@ -41,8 +41,7 @@ function baseFilms(){ fetch(baseUrl)
 })
 }
 baseFilms()
-
-
+//Adding queryselector and eventlistener for buy ticket button
 function buyTicket(){
     let button = document.querySelector("button#buy-ticket")
     button.addEventListener("click",function(){
